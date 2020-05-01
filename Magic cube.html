@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style type="text/css">
+		.p{width: 300px;
+		height: 300px;
+		margin: 150px auto;
+		perspective: 200000px;
+		}
+	    .box{width: 300px;
+		height: 300px;
+		transform-style: preserve-3d;
+		transform: rotateX(45deg) rotateY(45deg);
+			animation: ro 4s linear infinite;
+		}
+		@keyframes ro{
+			0%{
+				transform: rotateX(0deg) rotateY(0deg)
+			}
+			100%{
+			   transform: rotateX(360deg) rotateY(720deg)
+
+			}			
+		}
+		.ebox{width: 300px;
+		height: 300px;
+		position: absolute;
+			
+	}
+		.top{
+		transform:translateZ(150px); }
+		
+		.left{
+		transform:translateX(-150px) rotateY(90deg);	
+		}
+		
+		.right{
+			transform:translateX(150px) rotateY(90deg);	}
+		
+		.bottom{
+			transform:translateZ(-150px);
+			
+	}
+		
+		.after{
+				transform: translateY(-150px) rotateX(-90deg);
+			
+}
+		.before{
+		transform: translateY(150px) rotateX(90deg);
+		}
+		
+		@keyframes a1{
+			0%{
+				transform: translateZ(0px) scale(1) rotateZ(0deg);
+			}
+			20%{
+				transform: translateZ(300px) scale(0) rotateZ(720deg);
+			}
+			 90%{
+				transform: translateZ(300px) scale(0) rotateZ(720deg);
+			}
+
+			100%{
+				transform: 	translateZ(0px) scale(1) rotateZ(0deg);
+			}
+			
+		}
+		.ebox div:nth-child(1){
+			animation: a1 4.5s ease-in ;
+		}
+				.ebox div:nth-child(2){
+			animation: a1 4.5s ease-in 0.5s ;
+		}
+		.ebox div:nth-child(3){
+			animation: a1 4.5s ease-in 1s;
+		}
+
+				.ebox div:nth-child(4){
+			animation: a1 4.5s ease-in 1.5s;
+		}
+		.ebox div:nth-child(5){
+			animation: a1 4.5s ease-in 2s;
+		}
+		.ebox div:nth-child(6){
+			animation: a1 4.5s ease-in 2.5s;
+		}
+		.ebox div:nth-child(7){
+			animation: a1 4.5s ease-in 3s;
+		}
+		.ebox div:nth-child(8){
+			animation: a1 4.5s ease-in 3.5s;
+		}
+		.ebox div:nth-child(9){
+			animation: a1 4.5s ease-in 4s;
+		}
+		p{font-size: 40px;
+		font-family: "方正瘦金书_GBK";
+		float: right;
+		bottom: 5px;}
+	
+	
+	</style>
+</head>
+
+<body>
+</body>
+	 <div class="p">
+	   <div class="box">
+		  <div class="ebox top"></div>
+		  <div class="ebox bottom"></div>
+		  <div class="ebox left"></div>
+		  <div class="ebox right"></div>
+		  <div class="ebox before"></div>
+		  <div class="ebox after"></div>
+	 
+		 </div>
+	</div>
+	<p>lcrazyl</p>
+	<script language="javascript1.5">
+	var arr=document.querySelectorAll(".ebox");
+		for(var n=0;n<arr.length;n++){
+			for(var r=0;r<3;r++){
+				for(var c=0;c<3;c++){
+				  var divs=document.createElement("div");	
+					divs.style.cssText="width:100px;height:100px;border:2px solid #fff;box-sizing:boder-box;position:absolute;background-image:url(a"+n+".jpg);background-size:300px 300px;";
+					arr[n].appendChild(divs);
+					divs.style.left=c*100+"px";
+					divs.style.top=r*100+"px";
+					divs.style.backgroundPositionX=-c*100+"px";
+					divs.style.backgroundPositionY=-r*100+"px";
+				}	
+			}	
+		}
+	
+	
+	
+	
+	</script>
+</html>
